@@ -1,0 +1,18 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mekla.app",
+      "sha256_cert_fingerprints": ["C8:7D:4C:1C:28:55:6E:1A:D8:49:D0:3C:F6:47:B4:A8:8E:BC:D3:3B:B1:F9:74:B9:BC:D7:B8:DA:6B:8B:FA:5F"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.joinmeydan.app",
+      "sha256_cert_fingerprints": ["B2:0D:DB:35:0B:41:3B:B8:FB:16:DB:9E:7B:C1:7F:2B:BC:6D:10:AE:62:F9:BD:3C:9B:3B:46:EE:E3:44:D0:0D"]
+    }
+  }
+]

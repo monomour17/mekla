@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mekla — Benzer yaşam evresindeki aileler ve çiftler için etkinlik ve topluluk platformu." />
+  <title>Mekla — Birlikte, gerçek hayatta</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6C47FF;
+      --purple-light: #f3f0ff;
+      --purple-dark: #5235cc;
+      --text: #1a1a1a;
+      --muted: #666;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--purple);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-link:hover { color: var(--purple); }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 100px 24px 80px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+
+    .badge .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--purple);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+
+    h1 span { color: var(--purple); }
+
+    .subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 44px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+    .cta-note {
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    /* FEATURES */
+    .features {
+      background: #fafafa;
+      padding: 80px 24px;
+    }
+
+    .features-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .features-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 56px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #efefef;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(108,71,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .card .icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* HOW */
+    .how {
+      padding: 80px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .how h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding-bottom: 32px;
+      position: relative;
+    }
+
+    .step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: #efefef;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      padding-top: 8px;
+    }
+
+    .step-text p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      background: var(--purple);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .bottom-cta h2 {
+      font-size: clamp(24px, 4vw, 40px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      margin-bottom: 36px;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--purple);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 40px;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--purple);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--purple); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #bbb;
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">mekla</div>
+    <a href="mailto:hello@meklasocial.com" class="nav-link">İletişim</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">
+      <span class="dot"></span>
+      Yakında geliyor
+    </div>
+
+    <h1>Birlikte,<br /><span>gerçek hayatta.</span></h1>
+
+    <p class="subtitle">
+      Mekla, aileler ve çiftler için etkinlik ve topluluk platformu.
+      Benzer yaşam evresindeki insanlarla tanış, etkinliklere katıl.
+    </p>
+
+    <div class="cta-group">
+      <a href="mailto:hello@meklasocial.com" class="btn-primary">Bizi haberdar et</a>
+      <span class="cta-note">Yakında App Store ve Google Play'de</span>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="features-inner">
+      <p class="features-label">Neden Mekla?</p>
+      <h2>Sosyal hayatın yeni adresi</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🏕️</div>
+          <h3>Etkinlikler</h3>
+          <p>Yakınındaki etkinlikleri keşfet, başvur ve onay al. Ailene uygun aktiviteleri bir arada bul.</p>
+        </div>
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Topluluklar</h3>
+          <p>İlgi alanına göre topluluklara katıl. Doğa, spor, yemek, sanat — hepsi burada.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔒</div>
+          <h3>Güvenli Platform</h3>
+          <p>Doğrulanmış profiller, değerlendirme sistemi ve şikayet mekanizmasıyla güvenli bir ortam.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📸</div>
+          <h3>Anılar</h3>
+          <p>Etkinlik sonrası fotoğraflarını paylaş, anılarını grubunla sakla.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <h2>Nasıl çalışır?</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h4>Profilini oluştur</h4>
+          <p>Telefon numaranla kayıt ol, aile yapını ve ilgi alanlarını ekle.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h4>Topluluğa katıl</h4>
+          <p>Şehrindeki topluluklara katıl, paylaşımlara göz at.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h4>Etkinlik keşfet</h4>
+          <p>Sana uygun etkinlikleri bul ve başvur.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <h4>Gerçek hayatta buluş</h4>
+          <p>Onay al, etkinliğe katıl ve yeni dostluklar kur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <h2>Hazır mısın?</h2>
+    <p>Mekla yakında iOS ve Android'de. Haberdar olmak için yaz.</p>
+    <a href="mailto:hello@meklasocial.com" class="btn-white">hello@meklasocial.com</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">mekla</div>
+    <div class="footer-links">
+      <a href="/privacy-policy">Gizlilik Politikası</a>
+      <a href="/kullanim-kosullari">Kullanım Koşulları</a>
+      <a href="mailto:hello@meklasocial.com">İletişim</a>
+    </div>
+    <p class="footer-copy">© 2026 Mekla. Tüm hakları saklıdır.</p>
+  </footer>
+
+</body>
+</html>

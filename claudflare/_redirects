@@ -1,0 +1,9 @@
+# AASA/assetlinks dosyaları 200 dönmeli — Apple/Google redirect'i takip etmez.
+# Bu rewrite kuralı, eski domainden gelen .well-known isteklerini yerinde servis eder.
+https://joinmeydan.com/.well-known/* /.well-known/:splat 200
+https://www.joinmeydan.com/.well-known/* /.well-known/:splat 200
+
+# Eski domain'deki diğer her şey yeni domaine kalıcı yönlendirilir
+https://joinmeydan.com/* https://meklasocial.com/:splat 301
+https://www.joinmeydan.com/* https://meklasocial.com/:splat 301
+https://www.meklasocial.com/* https://meklasocial.com/:splat 301

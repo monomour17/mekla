@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2V3H53W5K4.com.mekla.app", "2V3H53W5K4.com.joinmeydan.app"],
+        "components": [
+          {
+            "/": "/event/*",
+            "comment": "Etkinlik deep link"
+          }
+        ]
+      }
+    ]
+  }
+}

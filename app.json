@@ -1,0 +1,91 @@
+{
+  "expo": {
+    "name": "Mekla",
+    "slug": "meydan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#6C47FF"
+    },
+    "scheme": "mekla",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mekla.app",
+      "associatedDomains": [
+        "applinks:meklasocial.com",
+        "applinks:joinmeydan.com"
+      ],
+      "infoPlist": {
+        "NSCameraUsageDescription": "Etkinlik ve profil fotoğrafı çekmek için kamera erişimi gereklidir.",
+        "NSPhotoLibraryUsageDescription": "Profil ve gönderi fotoğrafı seçmek için galeri erişimi gereklidir.",
+        "NSPhotoLibraryAddUsageDescription": "Fotoğrafları galerine kaydetmek için izin gereklidir.",
+        "NSLocationWhenInUseUsageDescription": "Etkinlik sohbetinde konum paylaşmak için konum erişimi gereklidir.",
+        "NSUserNotificationsUsageDescription": "Etkinlik ve mesaj bildirimlerini almak için bildirim izni gereklidir.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "appleTeamId": "2V3H53W5K4"
+    },
+    "android": {
+      "package": "com.mekla.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#6C47FF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "meklasocial.com",
+              "pathPrefix": "/event"
+            },
+            {
+              "scheme": "https",
+              "host": "joinmeydan.com",
+              "pathPrefix": "/event"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
+      "permissions": [
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR",
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": "eec94fbe-aa07-4b30-b330-c7c036d661d7"
+      }
+    },
+    "owner": "monomour",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/eec94fbe-aa07-4b30-b330-c7c036d661d7"
+    }
+  }
+}

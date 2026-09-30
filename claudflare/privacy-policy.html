@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gizlilik Politikası — Mekla</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #6C47FF;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    header .logo span {
+      opacity: 0.7;
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 48px auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      color: #6C47FF;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #6C47FF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: #f3f0ff;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box p {
+      margin: 0;
+      font-size: 15px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 16px;
+        padding: 28px 20px;
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mekla <span>Gizlilik Politikası</span></div>
+  </header>
+
+  <div class="container">
+    <h1>Gizlilik Politikası</h1>
+    <p class="date">Son güncelleme: Haziran 2026</p>
+
+    <p>
+      Mekla ("uygulama", "biz") olarak gizliliğinize önem veriyoruz. Bu politika, Mekla uygulamasını
+      kullandığınızda hangi verileri topladığımızı, nasıl kullandığımızı ve haklarınızın neler olduğunu açıklar.
+    </p>
+
+    <h2>1. Topladığımız Bilgiler</h2>
+    <p>Uygulamayı kullanırken aşağıdaki bilgileri toplayabiliriz:</p>
+    <ul>
+      <li><strong>Hesap bilgileri:</strong> Telefon numarası, ad, profil fotoğrafı, şehir, biyografi</li>
+      <li><strong>Etkinlik verileri:</strong> Oluşturduğunuz veya katıldığınız etkinlikler</li>
+      <li><strong>İçerik:</strong> Paylaştığınız fotoğraflar, yorumlar ve mesajlar</li>
+      <li><strong>Cihaz bilgileri:</strong> Push bildirim token'ı, cihaz tipi</li>
+      <li><strong>Konum:</strong> Yalnızca şehir bazında (tam konum alınmaz)</li>
+    </ul>
+
+    <h2>2. Bilgileri Nasıl Kullanırız</h2>
+    <ul>
+      <li>Hesabınızı oluşturmak ve yönetmek</li>
+      <li>Etkinlik keşfi ve topluluk özelliklerini sunmak</li>
+      <li>Push bildirimleri göndermek</li>
+      <li>Güvenli ve güvenilir bir platform sağlamak</li>
+      <li>Şikayet ve destek taleplerinizi işlemek</li>
+    </ul>
+
+    <h2>3. Bilgilerin Paylaşımı</h2>
+    <p>
+      Kişisel bilgilerinizi üçüncü taraflara satmıyoruz. Bilgileriniz yalnızca şu durumlarda paylaşılabilir:
+    </p>
+    <ul>
+      <li>Yasal yükümlülükler gerektirdiğinde</li>
+      <li>Hizmet sağlayıcılarımızla:
+        <ul>
+          <li><strong>Supabase</strong> — veritabanı ve kimlik doğrulama altyapısı</li>
+          <li><strong>Netgsm</strong> — SMS doğrulama kodlarının iletimi</li>
+          <li><strong>Sentry</strong> — uygulama hatalarının tespiti (hata kayıtları)</li>
+          <li><strong>PostHog</strong> — anonimleştirilmiş kullanım analitiği (AB sunucularında)</li>
+        </ul>
+      </li>
+      <li>Açık rızanızla</li>
+    </ul>
+
+    <h2>4. Veri Güvenliği</h2>
+    <p>
+      Verileriniz şifreli bağlantılar (HTTPS/TLS) üzerinden iletilir ve güvenli sunucularda saklanır.
+      Profil fotoğraflarınız ve etkinlik görselleri güvenli bulut depolama alanında tutulur.
+    </p>
+
+    <h2>5. Veri Saklama</h2>
+    <p>
+      Hesabınızı sildiğinizde kişisel verileriniz 30 gün içinde sistemden kaldırılır.
+      Paylaşılan etkinlik anıları ve topluluk içerikleri anonimleştirilerek saklanabilir.
+    </p>
+
+    <h2>6. Çocukların Gizliliği</h2>
+    <p>
+      Mekla 18 yaş ve üzeri kullanıcılara yöneliktir. 18 yaşın altındaki bireylerden
+      bilerek kişisel veri toplamıyoruz.
+    </p>
+
+    <h2>7. Haklarınız</h2>
+    <p>Aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+      <li>Verilerinize erişim talep etme</li>
+      <li>Verilerinizin düzeltilmesini isteme</li>
+      <li>Hesabınızı ve verilerinizi silme</li>
+      <li>Veri işlemeye itiraz etme</li>
+    </ul>
+
+    <h2>8. Çerezler</h2>
+    <p>
+      Mekla mobil uygulaması çerez kullanmaz. Web sitemiz yalnızca temel işlevsellik için
+      zorunlu çerezler kullanabilir.
+    </p>
+
+    <h2>9. Değişiklikler</h2>
+    <p>
+      Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişikliklerde uygulama içi bildirim
+      veya e-posta ile bilgilendirilirsiniz.
+    </p>
+
+    <h2>10. İletişim</h2>
+    <p>Gizlilikle ilgili sorularınız için:</p>
+    <div class="contact-box">
+      <p>📧 <a href="mailto:hello@meklasocial.com">hello@meklasocial.com</a></p>
+      <p>🌐 <a href="https://meklasocial.com">meklasocial.com</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Mekla. Tüm hakları saklıdır.
+  </footer>
+
+</body>
+</html>
